@@ -52,3 +52,19 @@ Questions
 Feel free to email me directly at nhorman@tuxdriver.com with question, or if you
 find a bug, open an issue here on the github page
 
+Build Problems:
+---------
+Build within ubuntu18.04, it will ./configure with the message "configure: error: libreadline is required", solution:
+sudo vim /usr/share/pkgconfig/readline.pc
+```
+Name: Readline
+Description: Gnu Readline library for command line editing
+URL: http://tiswww.cwru.edu/php/chet/readline/rltop.html
+Version: 7.0
+Requires.private: tinfo
+Libs: -lreadline
+Cflags: -I/usr/include/readline
+```
+and run ./configure again.
+
+
